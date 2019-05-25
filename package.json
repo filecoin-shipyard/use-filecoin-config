@@ -1,8 +1,9 @@
 {
   "name": "@jimpick/use-filecoin-config",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "React hook to load config via Filecoin API",
   "main": "dist/useFilecoinConfig.js",
+  "module": "./useFilecoinConfig.js",
   "type": "module",
   "scripts": {
     "build": "babel *.js --out-dir ./dist",
