@@ -1,6 +1,6 @@
 {
   "name": "@jimpick/use-filecoin-config",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "React hook to load config via Filecoin API",
   "main": "dist/useFilecoinConfig.js",
   "module": "./useFilecoinConfig.js",
@@ -30,7 +30,7 @@
     "type": "git",
     "url": "git+https://github.com/jimpick/use-filecoin-config.git"
   },
-  "dependencies": {
+  "peerDependencies": {
     "filecoin-api-client": "^0.3.0",
     "react": "^16.8.6"
   }
