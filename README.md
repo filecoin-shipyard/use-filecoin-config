@@ -1,5 +1,5 @@
-@jimpick/use-filecoin-config
-============================
+@filecoin-shipyard/use-filecoin-config
+======================================
 
 React hook to load config via Filecoin API
 
