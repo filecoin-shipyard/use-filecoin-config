@@ -1,5 +1,5 @@
 {
-  "name": "@jimpick/use-filecoin-config",
+  "name": "@filecoin-shipyard/use-filecoin-config",
   "version": "0.0.7",
   "description": "React hook to load config via Filecoin API",
   "main": "dist/useFilecoinConfig.js",
