@@ -10,25 +10,18 @@ export default function useFilecoinConfig (key, options) {
 
   useEffect(() => {
     let unmounted = false
-    async function run () {
-      const value = await fc.config.get(key)
-      if (!unmounted) {
-        setValue(value)
-      }
-    }
-    run()
-    return () => { unmounted = true }
-  }, true)
-
-  useEffect(() => {
     const state = { timeoutId: null }
     async function doWork () {
       try {
         const value = await fc.config.get(key)
-        setValue(value)
-        setError(null)
+        if (!unmounted) {
+	  setValue(value)
+	  setError(null)
+	}
       } catch (err) {
-        setError(err)
+        if (!unmounted) {
+          setError(err)
+	}
       }
     }
     function schedule () {
@@ -38,7 +31,10 @@ export default function useFilecoinConfig (key, options) {
       }, interval)
     }
     doWork().then(schedule)
-    return () => clearTimeout(state.timeoutId)
+    return () => {
+      clearTimeout(state.timeoutId)
+      unmounted = true
+    }
   }, true)
 
   return [error, value]
